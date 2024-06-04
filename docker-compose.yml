@@ -1,0 +1,14 @@
+version: '2'
+services:
+    redis:
+        image: bitnami/redis
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+            - REDIS_AOF_ENABLED=no
+        ports:
+            - '6379:6379'
+        volumes: 
+            - "redis_data:/bitnami/redis/data"
+
+volumes:
+    redis_data:
